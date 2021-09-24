@@ -39,6 +39,12 @@ header ul {
   top: 0;
 }
 
+.search p {
+  margin-top: 10px;
+  opacity: 0.5;
+  text-align: center;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   height: 100vh;

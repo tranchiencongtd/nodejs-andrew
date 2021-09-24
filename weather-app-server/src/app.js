@@ -34,14 +34,15 @@ app.get('/weather', (req, res) => {
       return res.send({ error });
     }
 
-    weather(geoData.longitude, geoData.latitude, (err, weatherData) => {
+    weather(geoData.longitude, geoData.latitude, (error, weatherData) => {
       if (error) {
         return res.send({ error });
       }
       res.send({
-        location: geoData.location,
+        location: weatherData.location,
         temperture: weatherData.temperature,
         address,
+        imgUrl: weatherData.img,
       });
     });
   });

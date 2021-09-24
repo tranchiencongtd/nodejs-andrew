@@ -13,7 +13,11 @@ const weather = (longitude, latitude, callback) => {
       if (apiResponse.error) {
         callback(apiResponse.error, undefined);
       } else {
-        callback(undefined, { temperature: apiResponse.current.temperature });
+        callback(undefined, {
+          temperature: apiResponse.current.temperature,
+          img: apiResponse.current.weather_icons[0],
+          location: apiResponse.location.name,
+        });
       }
     })
     .catch((error) => {
